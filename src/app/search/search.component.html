@@ -1,0 +1,33 @@
+<form action="" class="search-form">
+  <input class="form-control" type="text" [(ngModel)]="username"  name="username" placeholder="search Username" (keyup)='findProfile()'>
+  </form>
+  <div class="row">
+   <div class="col-md-6">
+      <img src="{{profile.avatar_url}}" class="img-circle"  alt="">
+  </div>
+  <div class="col-md-6">
+    <div class = "list-group">
+      <li class="list-group-item">Username: {{profile.name}}</li>
+      <li class="list-group-item"> Bio: {{profile.bio}}</li>
+      <li class="list-group-item"> Blog: {{profile.blog}}</li>
+      <li class="list-group-item"> Email: {{profile.email}}</li>
+      <li class="list-group-item"> public_repos: {{profile.public_repos}}</li>
+      <li class="list-group-item"> followers: {{profile.followers}}</li>
+      
+    </div>
+
+    <div class = "panel panel-default">
+      <div class="panel-heading">
+        <h1 class="panel-title">repositories</h1>
+      </div>
+      <div  class="panel-body" *ngFor="let repository of repositories">
+        <ul>
+          <a href="{{repository.html_url}}">{{repos.name}}</a>
+        </ul>
+      </div>
+    </div>
+   </div>
+  </div>
+  
+  
+
